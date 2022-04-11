@@ -10,7 +10,7 @@ public class BaseTest {
 
     @Test
     public void Auth(){
-        // TODO: github
+        // TODO: github - готово
         // TODO: remote chrome driver
 
         open(baseUrl);
