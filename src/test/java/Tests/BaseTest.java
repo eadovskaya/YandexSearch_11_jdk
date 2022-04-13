@@ -1,6 +1,7 @@
 package Tests;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -12,8 +13,16 @@ public class BaseTest {
 
     @BeforeClass
     public static void setUp() {
-        //Configuration.driverManagerEnabled = false;
-        //Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.driverManagerEnabled = false;
+
+        // local:  http://localhost:4444/wd/hub
+        // docker: http://host.docker.internal:4444/wd/hub
+        Configuration.remote = System.getenv("SELENIDE_REMOTE");
+    }
+
+    @AfterClass
+    public static void cleanUp(){
+        closeWebDriver();
     }
 
     @Test
