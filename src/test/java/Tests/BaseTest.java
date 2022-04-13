@@ -18,6 +18,7 @@ public class BaseTest {
         // local:  http://localhost:4444/wd/hub
         // docker: http://host.docker.internal:4444/wd/hub
         Configuration.remote = System.getenv("SELENIDE_REMOTE");
+
     }
 
     @AfterClass
