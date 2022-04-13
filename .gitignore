@@ -12,6 +12,7 @@ test-output/
 *~
 common/build
 /build/
+/target/
 cpp/iedriver/IEReturnTypes.h
 java/client/src/org/openqa/selenium/ie/IeReturnTypes.java
 java/server/test/org/openqa/selenium/example
