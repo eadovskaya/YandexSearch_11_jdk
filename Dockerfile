@@ -6,10 +6,11 @@ RUN apt-get -y install maven
 WORKDIR /app
 
 COPY pom.xml pom.xml
+
+RUN mvn -B dependency:resolve dependency:resolve-plugins
+
 COPY ./src/ src/
 
-RUN mvn dependency:resolve
-
-# TODO: 2-stage build
+RUN mvn install -DskipTests dependency:resolve dependency:resolve-plugins
 
 ENTRYPOINT ["mvn", "test"]
