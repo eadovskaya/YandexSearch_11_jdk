@@ -13,11 +13,15 @@ public class BaseTest {
 
     @BeforeClass
     public static void setUp() {
-        Configuration.driverManagerEnabled = false;
+        String remoteDriver = System.getenv("SELENIDE_REMOTE");
 
-        // local:  http://localhost:4444/wd/hub
-        // docker: http://host.docker.internal:4444/wd/hub
-        Configuration.remote = System.getenv("SELENIDE_REMOTE");
+        if (remoteDriver != null && !remoteDriver.isEmpty()){
+            Configuration.driverManagerEnabled = false;
+
+            // local:  http://localhost:4444/wd/hub
+            // docker: http://host.docker.internal:4444/wd/hub
+            Configuration.remote = System.getenv("SELENIDE_REMOTE");
+        }
     }
 
     @AfterClass
