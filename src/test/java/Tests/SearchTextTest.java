@@ -6,7 +6,7 @@ import static BaseSettings.SearchBase.*;
 import static BaseSettings.SpellerCheck.*;
 import static com.codeborne.selenide.Selenide.open;
 
-public class SearchTextTests extends BaseTest {
+public class SearchTextTest extends BaseTest {
 
     @Test
     public void Search(){
